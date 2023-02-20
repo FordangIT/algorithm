@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //replace() 문자열에서
+      //문자열은 얕은 복사 안됨 그래서 직접 바꿔줘야함
+      function solution(s) {
+        let answer = s;
+        answer = answer.replace(/A/g, "#");
+        return answer;
+      }
+
+      /* 선생풀이1
+      function solution(s) {
+        let answer = "";
+        for (let x of s) {
+          if (x === "A") answer += "#";
+          else answer += x;
+        }
+        return answer;
+      }
+      */
+      /* 내 풀이
+      function solution(s) {
+        let answer = "";
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] !== "A") {
+            answer += s[i];
+          } else {
+            answer += "#";
+          }
+        }
+        return answer;
+      }
+      */
+      let str = "BANANA";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
+
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = s;
+        answer = answer.replace(/A/g, "#");
+        return answer;
+      }
+
+      let str = "BANANA";
+      console.log(solution(str));
+    </script>
+  </body>
+</html> -->

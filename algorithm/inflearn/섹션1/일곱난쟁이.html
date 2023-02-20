@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //splice로 특정 i 삭제하기
+      function solution(arr) {
+        let sum = arr.reduce((acc, cur) => acc + cur, 0);
+        console.log(sum);
+        for (let i = 0; i < arr.length - 1; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (sum - (arr[i] + arr[j]) === 100) {
+              if (i < j) {
+                arr.splice(j, 1);
+                arr.splice(i, 1);
+              } else {
+                arr.splice(i, 1);
+                arr.splice(j, 1);
+              }
+            }
+          }
+        }
+        return arr;
+      }
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(solution(arr));
+      /* 내 틀린 문제풀이
+        function solution(arr) {
+        let answer = [];
+        let sum = arr.reduce((acc, cur) => acc + cur);
+        for (let i = 0; i < arr.length - 1; i++) {
+          for (let j = i+1; j < arr.length; j++) {
+            if (sum - (arr[i] + arr[j]) === 100) {
+              for (let k = 0; k < arr.length; k++) {
+                if (k !== i && k !== j) {
+                  answer.push(arr[k]);
+                }
+              }
+            }
+          }
+        }
+        return answer;
+      }
+      */
+    </script>
+  </body>
+</html>

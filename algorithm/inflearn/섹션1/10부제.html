@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(day, arr) {
+        let answer = 0;
+        for (let x of arr) {
+          if (x % 10 === day) {
+            answer++;
+          }
+        }
+        return answer;
+      }
+      arr = [12, 20, 54, 30, 87, 91, 30];
+      console.log(solution(0, arr));
+      /*
+      어떤 숫자든 10으로 나누면 몫이 앞자리 나머지 값이 일의 자리수가 된다. 
+      2563 % 10  ///  몫: 256   ///   나머지, 일의자리:3
+      */
+    </script>
+  </body>
+</html>
