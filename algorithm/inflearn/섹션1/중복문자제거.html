@@ -5,9 +5,32 @@
   </head>
   <body>
     <script>
+      //indexOf('k',1번째 인덱스부터 찾아라) //includes()
       function solution(s) {
+        let answer = "";
+        for (let i = 0; i < s.length; i++) {
+          if (s.indexOf(s[i]) === i) answer += s[i];
+        }
         return answer;
+        /*내 문제 풀이 includes 사용 
+        let answer = "";
+        for (let x of s) {
+          if (!answer.includes(x)) answer += x;
+        }
+        return answer;
+        */
       }
+      /* 이건 k가 몇개인지 찾아보는 문제 while 이랑 indexOf 활용 
+      function solution(s){
+        let count=0; 
+        let pos=s.indexOf('k')
+        while(pos !== -1){
+          count++;
+          pos = s.indexOf('k', pos+1);
+        }
+        return count
+      }
+      */
       console.log(solution("ksekkset"));
     </script>
   </body>
