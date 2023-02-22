@@ -5,11 +5,36 @@
   </head>
   <body>
     <script>
+      //  Array.from({length: 5}, (v, i) => i);
+      // [0, 1, 2, 3, 4]
+      //혹은
+      // Array.from({length:5}, ()=>1);
+      // [1,1,1,1,1]
+
+      //이런건 암기해버리자.!!!!!!
+      //쌤이 푼 방식으로 풀어보기 //문제 설명중에 공동 2등 2등 2등 출력을 만족하는
       function solution(arr) {
+        let n = arr.length;
+        let newArr = Array.from({ length: n }, () => 1);
+        for (let i = 0; i < n; i++) {
+          for (j = 0; j < n; j++) {
+            if (arr[j] > arr[i]) newArr[i]++;
+          }
+        }
+        return newArr;
+        /* 내 문제 풀이 
+        // slice() 이용해서 얕은복사로 기본 배열에 영향을 주지 않게 했다.
+        let answer = "";
+        let newArr = arr.slice();
+        newArr = newArr.sort((a, b) => b - a);
+        for (let i = 0; i < arr.length; i++) {
+          answer += newArr.indexOf(arr[i]) + 1;
+        }
         return answer;
+        */
       }
 
-      let arr = [87, 89, 92, 100, 76];
+      let arr = [92, 89, 92, 100, 76];
       console.log(solution(arr));
     </script>
   </body>

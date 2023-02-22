@@ -6,7 +6,21 @@
   <body>
     <script>
       function solution(arr) {
-        return answer;
+        //그냥 푸는것 같은데 꽤 머리 써야 됨
+        //연속으로 맞을 때 점수가 올라간다. => 이건 con이 0이 아닐 때
+        // 점수 count++
+        // 채점 1일 때
+        let con = 0,
+          count = 0;
+        for (let x of arr) {
+          if (x === 1) {
+            con++;
+            count += con;
+          } else {
+            con = 0;
+          }
+        }
+        return count;
       }
 
       let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
