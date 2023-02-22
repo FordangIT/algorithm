@@ -5,30 +5,22 @@
   </head>
   <body>
     <script>
+      //split 이용해서 문자열 길이 구하기
       function solution(s, t) {
+        let answer = s.split(t).length - 1;
         return answer;
       }
-
+      /*
+      function solution(s, t) {
+        let count = 0;
+        for (let x of s) {
+          if (x === t) count++;
+        }
+        return count;
+      }
+*/
       let str = "COMPUTERPROGRAMMING";
       console.log(solution(str, "R"));
     </script>
   </body>
 </html>
-
-<!-- <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(s, t){
-                let answer=s.split(t).length;
-                return answer-1;
-            }
-            
-            let str="COMPUTERPROGRAMMING";
-            console.log(solution(str, 'R'));
-        </script>
-    </body>
-</html> -->
