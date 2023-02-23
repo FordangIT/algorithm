@@ -5,7 +5,28 @@
   </head>
   <body>
     <script>
+      //선생님의 단축된 풀이 방법으로 다시 풀기()
       function solution(arr) {
+        let answer = Number.MIN_SAFE_INTEGER;
+        let sum1 = 0,
+          sum2 = 0;
+        //가로줄 구하기
+        for (let i = 0; i < arr.length; i++) {
+          sum1 = sum2 = 0;
+          for (let j = 0; j < arr.length; j++) {
+            sum1 += arr[i][j];
+            sum2 += arr[j][i];
+          }
+          answer = Math.max(answer, sum1, sum2);
+        }
+
+        sum1 = sum2 = 0;
+        //대각선 구하기
+        for (i = 0; i < arr.length; i++) {
+          sum1 += arr[i][i];
+          sum2 += arr[i][arr.length - i - 1];
+        }
+        answer = Math.max(answer, sum1, sum2);
         return answer;
       }
 
@@ -17,6 +38,40 @@
         [19, 13, 30, 13, 19],
       ];
       console.log(solution(arr));
+      /* 내 문제 풀이
+      function solution(arr) {
+        let max = Number.MIN_SAFE_INTEGER;
+        let total = 0;
+        //가로줄 구하기
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length; j++) {
+            total += arr[i][j];
+          }
+          if (total > max) max = total;
+          total = 0;
+        }
+        //세로줄 구하기
+        for (i = 0; i < arr.length; i++) {
+          for (j = 0; j < arr.length; j++) {
+            total += arr[j][i];
+          }
+          if (total > max) max = total;
+          total = 0;
+        }
+        //대각선 구하기
+        for (i = 0; i < arr.length; i++) {
+          total += arr[i][i];
+        }
+        if (total > max) max = total;
+        total = 0;
+        for (j = 0; j < arr.length; j++) {
+          total += arr[j][arr.length - j - 1];
+        }
+        if (total > max) max = total;
+        total = 0;
+        return max;
+      }
+      */
     </script>
   </body>
 </html>

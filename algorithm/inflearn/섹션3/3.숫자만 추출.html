@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //0208에서 parseInt하면 앞에 0날라간다.
+      //isNAN() 숫자인지 아닌지 판단한다.
+      function solution(str) {
+        let answer = "";
+        for (let x of str) {
+          if (!isNaN(x)) answer += x;
+        }
+        return parseInt(answer);
+        /*만약 parseInt쓰지 말라고 하면? 
+        let answer=0; 
+        for(let x of str){
+          if(!isNaN(x)) answer+= answer*10 +Number(x)
+        }
+        return answer;
+        */
+
+        /*정규식으로 야매로 품
+        str = str.replace(/[^0-9]/g, "").replace(/[0]/i, "");
+        */
+      }
+
+      let str = "g0en2T0s8eSoft";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>

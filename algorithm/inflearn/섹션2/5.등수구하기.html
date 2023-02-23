@@ -5,6 +5,7 @@
   </head>
   <body>
     <script>
+      // 다시 풀기 <o>
       //  Array.from({length: 5}, (v, i) => i);
       // [0, 1, 2, 3, 4]
       //혹은
@@ -15,9 +16,9 @@
       //쌤이 푼 방식으로 풀어보기 //문제 설명중에 공동 2등 2등 2등 출력을 만족하는
       function solution(arr) {
         let n = arr.length;
-        let newArr = Array.from({ length: n }, () => 1);
+        let newArr = Array.from({ length: 5 }, () => 1);
         for (let i = 0; i < n; i++) {
-          for (j = 0; j < n; j++) {
+          for (let j = 0; j < n; j++) {
             if (arr[j] > arr[i]) newArr[i]++;
           }
         }

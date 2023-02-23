@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //쌤 방법으로도 익숙해지기
+      //풀긴 했으나 방법을 생각해내는데 오래걸림
+      function solution(s) {
+        let answer = "YES";
+        s = s.toLowerCase();
+        if (s.split("").reverse().join("") !== s) return "NO";
+        return answer;
+        /*쌤풀이1)
+        let answer = "YES";
+        s = s.toLowerCase();
+        let len = s.length;
+        for (let i = 0; i < Math.floor(len / 2); i++) {
+          if (s[i] !== s[len - i - 1]) return "NO";
+        }
+        return answer;
+        */
+        /* 내 문제 풀이
+        let answer = "YES";
+        for (let i = 0; i < Math.floor(s.length / 2); i++) {
+          if (s[i].toUpperCase() !== s[s.length - i - 1].toUpperCase())
+            answer = "NO";
+        }
+        return answer;
+      */
+      }
+
+      let str = "goosG";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
